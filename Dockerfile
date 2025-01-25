@@ -19,8 +19,8 @@ RUN chmod +x /app/bin/omdb-api-cli
 
 FROM php:8.2-cli
 
-WORKDIR /app/bin
+WORKDIR /app
 
 COPY --from=builder /app /app
 
-ENTRYPOINT ["php", "omdb-api-cli", "--ansi"]
+ENTRYPOINT ["php", "bin/omdb-api-cli", "--ansi"]
