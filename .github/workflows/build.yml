@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  dockerhub-image:
     runs-on: ubuntu-latest
 
     steps:
