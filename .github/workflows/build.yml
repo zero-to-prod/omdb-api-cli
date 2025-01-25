@@ -18,4 +18,4 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Push the Docker image
-        run: sh dock push
+        run: sh dh push
