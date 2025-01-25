@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This project provides a convenient [dh](https://github.com/zero-to-prod/dock) (Docker Hub) script to simplify image development.
+This project provides a convenient `dh` (Docker Hub) script to simplify image development.
 
 ## Prerequisites
 
