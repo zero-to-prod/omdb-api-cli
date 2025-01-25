@@ -48,7 +48,7 @@ vendor/bin/omdb-api-cli
 
 ## Docker Image
 
-You can also run the cli using the docker image:
+You can also run the cli using the [docker image](https://hub.docker.com/repository/docker/davidsmith3/omdb-api-cli/general):
 
 ```shell
 docker run --rm davidsmith3/omdb-api-cli
