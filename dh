@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+  cat <<EOF
+Usage: $0 <command> [options]
+
+Commands:
+  run        Run the image in a container.
+  build      Build the image.
+  push       Push the latest image to Docker Hub.
+EOF
+  exit 1
+}
+
+if [ "$#" -lt 1 ]; then
+  usage
+fi
+
+case "$1" in
+  run)
+    shift
+    docker run --rm davidsmith3/omdb-api-cli "$@"
+  ;;
+  build)
+    docker build -t davidsmith3/omdb-api-cli:latest .
+  ;;
+  push)
+    docker push davidsmith3/omdb-api-cli:latest
+  ;;
+esac
