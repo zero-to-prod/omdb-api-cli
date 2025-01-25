@@ -6,7 +6,7 @@ use Zerotoprod\OmdbApiCli\ByIdOrTitleCommand;
 use Zerotoprod\OmdbApiCli\PosterCommand;
 use Zerotoprod\OmdbApiCli\SearchCommand;
 
-require __DIR__.'/../vendor/autoload.php';
+require getcwd().'/vendor/autoload.php';
 
 $application = (new Application());
 
