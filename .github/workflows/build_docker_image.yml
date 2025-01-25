@@ -11,19 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configure Docker to use Credential Helpers
+      - name: Set up Docker credential helpers
         run: |
           mkdir -p ~/.docker
           echo '{
             "credHelpers": {
-              "index.docker.io": "${{ secrets.DOCKER_IMAGE }}",
-              "myregistry.example.com": "${{ secrets.DOCKER_IMAGE }}",
-              "docker.internal.example": "pass"
+              "index.docker.io": "secretservice"
             }
           }' > ~/.docker/config.json
 
-      - name: Logout from DockerHub if logged in
-        run: docker logout
+      - name: Install Docker credential helper
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pass
+          sudo apt-get install -y docker-credential-secretservice
 
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
