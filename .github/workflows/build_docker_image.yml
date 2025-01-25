@@ -1,0 +1,29 @@
+name: build_docker_image
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  dockerhub-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Create .env
+        run: touch .env
+
+      - name: Set .env variables
+        run: |
+          echo "DOCKER_IMAGE=${{ secrets.DOCKER_IMAGE }}" >> .env
+          echo "DOCKER_IMAGE_TAG=${{ secrets.DOCKER_IMAGE_TAG }}" >> .env
+
+      - name: Build
+        run: sh dh build
+
+      - name: Push
+        run: sh dh push
