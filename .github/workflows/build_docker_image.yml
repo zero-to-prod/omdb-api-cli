@@ -11,21 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Docker credential helpers
-        run: |
-          mkdir -p ~/.docker
-          echo '{
-            "credHelpers": {
-              "index.docker.io": "secretservice"
-            }
-          }' > ~/.docker/config.json
-
-      - name: Install Docker credential helper
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pass
-          sudo apt-get install -y docker-credential-secretservice
-
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
