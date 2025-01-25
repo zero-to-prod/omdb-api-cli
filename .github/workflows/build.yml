@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create and Set DOCKER_IMAGE values in .env
+        run: |
+          touch .env
+          echo "DOCKER_IMAGE=${{ secrets.DOCKER_IMAGE }}" >> .env
+          echo "DOCKER_IMAGE_TAG=${{ secrets.DOCKER_IMAGE_TAG }}" >> .env 
+
       - name: Build the Docker image
         run: sh dh build
 
