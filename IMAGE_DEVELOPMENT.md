@@ -1,14 +1,12 @@
-# Local Development
+# Image Development
 
 ## Contents
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Initializing](#initializing)
 - [Building](#building)
 - [Running](#running)
 - [Pushing](#pushing)
-- [Configuration](#configuration)
 
 ## Introduction
 
@@ -17,6 +15,15 @@ This project provides a convenient [dh](https://github.com/zero-to-prod/dock) (D
 ## Prerequisites
 
 - Docker installed and running
+
+## Configuration
+
+Before starting development, verify that your `.env` file contains the correct settings.
+
+```dotenv
+DOCKER_IMAGE=
+DOCKER_IMAGE_TAG=latest
+```
 
 ## Building
 
