@@ -23,4 +23,4 @@ WORKDIR /app/bin
 
 COPY --from=builder /app /app
 
-ENTRYPOINT ["php", "omdb-api-Wcli", "--ansi"]
+ENTRYPOINT ["php", "omdb-api-cli", "--ansi"]
