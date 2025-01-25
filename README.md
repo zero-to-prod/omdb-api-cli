@@ -17,16 +17,16 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Docker Image](#docker-image)
 - [Local Development](./LOCAL_DEVELOPMENT.md)
+- [Image Development](./IMAGE_DEVELOPMENT.md)
 - [Contributing](#contributing)
 
 ## Introduction
 
-
-
 ## Requirements
 
-- PHP 7.1 or higher.
+- PHP 8.1 or higher.
 
 ## Installation
 
@@ -40,7 +40,19 @@ This will add the package to your project’s dependencies and create an autoloa
 
 ## Usage
 
+Run the cli:
 
+```shell
+vendor/bin/omdb-api-cli
+```
+
+## Docker Image
+
+You can also run the cli using the docker image:
+
+```shell
+docker run --rm davidsmith3/omdb-api-cli
+```
 
 ## Contributing
 
