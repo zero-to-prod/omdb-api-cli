@@ -8,8 +8,6 @@ use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
 use Zerotoprod\OmdbApiCli\ByIdOrTitleCommand;
 use Zerotoprod\OmdbApiCli\DataModels\ByIdOrTitleOptions;
-use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
-use Zerotoprod\OmdbApiCli\SearchCommand;
 
 class ByIdOrTitleTest extends TestCase
 {
@@ -22,7 +20,7 @@ class ByIdOrTitleTest extends TestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             ByIdOrTitleOptions::apikey => '',
-            '--' .ByIdOrTitleOptions::title => '',
+            '--'.ByIdOrTitleOptions::title => '',
         ]);
 
         $commandTester->assertCommandIsSuccessful();
