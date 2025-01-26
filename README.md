@@ -4,7 +4,7 @@
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/omdb-api-cli)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/omdb-api-cli/test.yml?label=test)](https://github.com/zero-to-prod/omdb-api-cli/actions)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/:package_slug/build_docker_image.yml?label=test)](https://github.com/zero-to-prod/:package_slug/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/:package_slug/build_docker_image.yml?label=test)](https://github.com/zero-to-prod/omdb-api-cli/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/zero-to-prod/omdb-api-cli?color=blue)](https://packagist.org/packages/zero-to-prod/omdb-api-cli/stats)
 [![php](https://img.shields.io/packagist/php-v/zero-to-prod/omdb-api-cli.svg?color=purple)](https://packagist.org/packages/zero-to-prod/omdb-api-cli/stats)
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/omdb-api-cli?color=f28d1a)](https://packagist.org/packages/zero-to-prod/omdb-api-cli)
