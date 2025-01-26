@@ -2,7 +2,7 @@ name: build_docker_image
 
 on:
   workflow_run:
-    workflows: ["tests"]
+    workflows: ["test"]
     types:
       - completed
 
