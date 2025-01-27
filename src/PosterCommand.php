@@ -11,7 +11,7 @@ use Zerotoprod\OmdbApi\OmdbApi;
 use Zerotoprod\OmdbApiCli\DataModels\PosterOptions;
 
 #[AsCommand(
-    name: 'poster',
+    name: 'omdb-api-cli:poster',
     description: 'Get the poster of a movie or series'
 )]
 class PosterCommand extends Command
@@ -20,7 +20,7 @@ class PosterCommand extends Command
     {
         $Options = PosterOptions::from($input->getArguments());
 
-        $output->write(
+        $output->writeLn(
             (new OmdbApi($Options->apikey))->poster(
                 $Options->imdbid
             )
