@@ -13,16 +13,16 @@ class PosterTest extends TestCase
 {
     #[Test] public function command(): void
     {
-        $application = new Application();
-        $application->add(new PosterCommand());
+        $Application = new Application();
+        $Application->add(new PosterCommand());
 
-        $command = $application->find('omdb-api-cli:poster');
-        $commandTester = new CommandTester($command);
-        $commandTester->execute([
+        $Command = $Application->find('omdb-api-cli:poster');
+        $CommandTester = new CommandTester($Command);
+        $CommandTester->execute([
             PosterOptions::apikey => '',
             PosterOptions::imdbid => '',
         ]);
 
-        $commandTester->assertCommandIsSuccessful();
+        $CommandTester->assertCommandIsSuccessful();
     }
 }
