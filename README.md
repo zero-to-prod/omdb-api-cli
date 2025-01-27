@@ -41,10 +41,10 @@ This will add the package to your project’s dependencies and create an autoloa
 
 ## Usage
 
-Run the cli:
+Run this command to see the available commands:
 
 ```shell
-vendor/bin/omdb-api-cli
+vendor/bin/omdb-api-cli list
 ```
 
 ## Docker Image
