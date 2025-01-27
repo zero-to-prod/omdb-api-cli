@@ -15,6 +15,7 @@ This project provides a convenient `dh` (Docker Hub) script to simplify image de
 ## Prerequisites
 
 - Docker installed and running
+- [Multi-platform builds](https://docs.docker.com/build/building/multi-platform/#prerequisites) enabled in Docker
 
 ## Configuration
 
