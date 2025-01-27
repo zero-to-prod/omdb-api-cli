@@ -16,7 +16,7 @@ class SearchTest extends TestCase
         $application = new Application();
         $application->add(new SearchCommand());
 
-        $command = $application->find('search');
+        $command = $application->find('omdb-api-cli:search');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             SearchOptions::apikey => '',
