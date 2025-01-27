@@ -12,7 +12,7 @@ use Zerotoprod\OmdbApi\OmdbApi;
 use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
 
 #[AsCommand(
-    name: 'search',
+    name: 'omdb-api-cli:search',
     description: 'Search for a movie, series or episode'
 )]
 class SearchCommand extends Command
@@ -22,7 +22,7 @@ class SearchCommand extends Command
     {
         $Options = SearchOptions::from([...$input->getArguments(), ...$input->getOptions()]);
 
-        $output->write(
+        $output->writeLn(
             json_encode(
                 (new OmdbApi($Options->apikey))->search(
                     $Options->title,
