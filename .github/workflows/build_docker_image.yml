@@ -17,16 +17,16 @@ jobs:
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "davidsmith3" --password-stdin
 
-      - name: Create .env
-        run: touch .env
+      - name: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v3
 
-      - name: Set .env variables
+      - name: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push
         run: |
-          echo "DOCKER_IMAGE=davidsmith3/omdb-api-cli" >> .env
-          echo "DOCKER_IMAGE_TAG=latest" >> .env
-
-      - name: Build
-        run: sh dh build
-
-      - name: Push
-        run: sh dh push
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            -t "davidsmith3/omdb-api-cli" \
+            --push \
+            .
