@@ -5,11 +5,13 @@ use Symfony\Component\Console\Application;
 use Zerotoprod\OmdbApiCli\ByIdOrTitleCommand;
 use Zerotoprod\OmdbApiCli\PosterCommand;
 use Zerotoprod\OmdbApiCli\SearchCommand;
+use Zerotoprod\OmdbApiCli\SrcCommand;
 
 require getcwd().'/vendor/autoload.php';
 
 $application = (new Application());
 
+$application->add(new SrcCommand());
 $application->add(new ByIdOrTitleCommand());
 $application->add(new SearchCommand());
 $application->add(new PosterCommand());
