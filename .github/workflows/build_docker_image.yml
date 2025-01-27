@@ -22,7 +22,7 @@ jobs:
 
       - name: Set .env variables
         run: |
-          echo "DOCKER_IMAGE=omdb-api-cli" >> .env
+          echo "DOCKER_IMAGE=davidsmith3/omdb-api-cli" >> .env
           echo "DOCKER_IMAGE_TAG=latest" >> .env
 
       - name: Build
