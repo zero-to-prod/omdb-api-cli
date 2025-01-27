@@ -13,7 +13,7 @@ use Zerotoprod\OmdbApiCli\DataModels\ByIdOrTitleOptions;
 use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
 
 #[AsCommand(
-    name: 'byIdOrTitle',
+    name: 'omdb-api-cli:byIdOrTitle',
     description: 'Get title by ID or name'
 )]
 class ByIdOrTitleCommand extends Command
