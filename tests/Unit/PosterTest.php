@@ -16,7 +16,7 @@ class PosterTest extends TestCase
         $application = new Application();
         $application->add(new PosterCommand());
 
-        $command = $application->find('poster');
+        $command = $application->find('omdb-api-cli:poster');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             PosterOptions::apikey => '',
