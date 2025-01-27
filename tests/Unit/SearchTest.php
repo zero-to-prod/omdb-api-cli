@@ -13,16 +13,16 @@ class SearchTest extends TestCase
 {
     #[Test] public function command(): void
     {
-        $application = new Application();
-        $application->add(new SearchCommand());
+        $Application = new Application();
+        $Application->add(new SearchCommand());
 
-        $command = $application->find('omdb-api-cli:search');
-        $commandTester = new CommandTester($command);
-        $commandTester->execute([
+        $Command = $Application->find('omdb-api-cli:search');
+        $CommandTester = new CommandTester($Command);
+        $CommandTester->execute([
             SearchOptions::apikey => '',
             SearchOptions::title => '',
         ]);
 
-        $commandTester->assertCommandIsSuccessful();
+        $CommandTester->assertCommandIsSuccessful();
     }
 }
