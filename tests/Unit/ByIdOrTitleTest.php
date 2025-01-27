@@ -13,16 +13,16 @@ class ByIdOrTitleTest extends TestCase
 {
     #[Test] public function command(): void
     {
-        $application = new Application();
-        $application->add(new ByIdOrTitleCommand());
+        $Application = new Application();
+        $Application->add(new ByIdOrTitleCommand());
 
-        $command = $application->find('omdb-api-cli:byIdOrTitle');
-        $commandTester = new CommandTester($command);
-        $commandTester->execute([
+        $Command = $Application->find('omdb-api-cli:byIdOrTitle');
+        $CommandTester = new CommandTester($Command);
+        $CommandTester->execute([
             ByIdOrTitleOptions::apikey => '',
             '--'.ByIdOrTitleOptions::title => '',
         ]);
 
-        $commandTester->assertCommandIsSuccessful();
+        $CommandTester->assertCommandIsSuccessful();
     }
 }
