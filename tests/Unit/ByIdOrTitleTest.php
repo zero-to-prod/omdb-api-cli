@@ -16,7 +16,7 @@ class ByIdOrTitleTest extends TestCase
         $application = new Application();
         $application->add(new ByIdOrTitleCommand());
 
-        $command = $application->find('byIdOrTitle');
+        $command = $application->find('omdb-api-cli:byIdOrTitle');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             ByIdOrTitleOptions::apikey => '',
