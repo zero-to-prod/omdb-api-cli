@@ -9,11 +9,11 @@ use Zerotoprod\OmdbApiCli\SrcCommand;
 
 require getcwd().'/vendor/autoload.php';
 
-$application = (new Application());
+$Application = (new Application());
 
-$application->add(new SrcCommand());
-$application->add(new ByIdOrTitleCommand());
-$application->add(new SearchCommand());
-$application->add(new PosterCommand());
+$Application->add(new SrcCommand());
+$Application->add(new ByIdOrTitleCommand());
+$Application->add(new SearchCommand());
+$Application->add(new PosterCommand());
 
-$application->run();
+$Application->run();
