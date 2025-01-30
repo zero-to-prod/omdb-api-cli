@@ -6,8 +6,8 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\OmdbApiCli\ByIdOrTitleCommand;
-use Zerotoprod\OmdbApiCli\DataModels\ByIdOrTitleOptions;
+use Zerotoprod\OmdbApiCli\ByIdOrTitle\ByIdOrTitleCommand;
+use Zerotoprod\OmdbApiCli\ByIdOrTitle\ByIdOrTitleOptions;
 
 class ByIdOrTitleTest extends TestCase
 {
