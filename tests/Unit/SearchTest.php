@@ -6,8 +6,8 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
-use Zerotoprod\OmdbApiCli\SearchCommand;
+use Zerotoprod\OmdbApiCli\Search\SearchCommand;
+use Zerotoprod\OmdbApiCli\Search\SearchOptions;
 
 class SearchTest extends TestCase
 {
