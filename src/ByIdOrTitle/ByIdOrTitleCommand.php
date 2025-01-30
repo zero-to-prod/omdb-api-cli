@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\OmdbApiCli;
+namespace Zerotoprod\OmdbApiCli\ByIdOrTitle;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -9,23 +9,25 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\OmdbApi\OmdbApi;
-use Zerotoprod\OmdbApiCli\DataModels\ByIdOrTitleOptions;
-use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
+use Zerotoprod\OmdbApiCli\Search\SearchOptions;
 
 #[AsCommand(
-    name: 'omdb-api-cli:byIdOrTitle',
+    name: ByIdOrTitleCommand::signature,
     description: 'Get title by ID or name'
 )]
 class ByIdOrTitleCommand extends Command
 {
 
+    public const signature = 'omdb-api-cli:byIdOrTitle';
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $Options = ByIdOrTitleOptions::from([...$input->getArguments(), ...$input->getOptions()]);
+        $Args = ByIdOrTitleArguments::from($input->getArguments());
+        $Options = ByIdOrTitleOptions::from($input->getOptions());
 
         $output->write(
             json_encode(
-                (new OmdbApi($Options->apikey))->byIdOrTitle(
+                (new OmdbApi($Args->apikey))->byIdOrTitle(
                     $Options->title,
                     $Options->imdbid,
                     $Options->type,
@@ -41,7 +43,7 @@ class ByIdOrTitleCommand extends Command
 
     protected function configure(): void
     {
-        $this->addArgument(ByIdOrTitleOptions::apikey, InputArgument::REQUIRED, 'The API key.');
+        $this->addArgument(ByIdOrTitleArguments::apikey, InputArgument::REQUIRED, 'The API key.');
         $this->addOption(ByIdOrTitleOptions::title, mode: InputOption::VALUE_OPTIONAL, description: 'The name of the title');
         $this->addOption(ByIdOrTitleOptions::imdbid, mode: InputOption::VALUE_OPTIONAL, description: 'The Imdb of the title');
         $this->addOption(SearchOptions::type, mode: InputOption::VALUE_OPTIONAL, description: 'The type of the title: movie, series, episode', suggestedValues: ['movie', 'series', 'episode']);

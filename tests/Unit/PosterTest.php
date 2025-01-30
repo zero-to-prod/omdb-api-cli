@@ -6,8 +6,8 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\OmdbApiCli\DataModels\PosterOptions;
-use Zerotoprod\OmdbApiCli\PosterCommand;
+use Zerotoprod\OmdbApiCli\Poster\PosterCommand;
+use Zerotoprod\OmdbApiCli\Poster\PosterArguments;
 
 class PosterTest extends TestCase
 {
@@ -16,11 +16,11 @@ class PosterTest extends TestCase
         $Application = new Application();
         $Application->add(new PosterCommand());
 
-        $Command = $Application->find('omdb-api-cli:poster');
+        $Command = $Application->find(PosterCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([
-            PosterOptions::apikey => '',
-            PosterOptions::imdbid => '',
+            PosterArguments::apikey => '',
+            PosterArguments::imdbid => '',
         ]);
 
         $CommandTester->assertCommandIsSuccessful();

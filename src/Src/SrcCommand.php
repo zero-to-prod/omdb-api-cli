@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\OmdbApiCli;
+namespace Zerotoprod\OmdbApiCli\Src;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

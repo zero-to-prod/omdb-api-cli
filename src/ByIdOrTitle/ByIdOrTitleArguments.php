@@ -1,15 +1,13 @@
 <?php
 
-namespace Zerotoprod\OmdbApiCli\DataModels;
+namespace Zerotoprod\OmdbApiCli\ByIdOrTitle;
 
 use Zerotoprod\DataModel\DataModel;
 
-class PosterOptions
+class ByIdOrTitleArguments
 {
     use DataModel;
 
     public const apikey = 'apikey';
     public $apikey;
-    public const imdbid = 'imdbid';
-    public $imdbid;
 }

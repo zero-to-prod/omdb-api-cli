@@ -6,8 +6,8 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\OmdbApiCli\DataModels\SearchOptions;
-use Zerotoprod\OmdbApiCli\SearchCommand;
+use Zerotoprod\OmdbApiCli\Search\SearchArguments;
+use Zerotoprod\OmdbApiCli\Search\SearchCommand;
 
 class SearchTest extends TestCase
 {
@@ -16,11 +16,11 @@ class SearchTest extends TestCase
         $Application = new Application();
         $Application->add(new SearchCommand());
 
-        $Command = $Application->find('omdb-api-cli:search');
+        $Command = $Application->find(SearchCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([
-            SearchOptions::apikey => '',
-            SearchOptions::title => '',
+            SearchArguments::apikey => '',
+            SearchArguments::title => '',
         ]);
 
         $CommandTester->assertCommandIsSuccessful();
