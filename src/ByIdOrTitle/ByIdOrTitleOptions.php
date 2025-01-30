@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\OmdbApiCli\DataModels;
+namespace Zerotoprod\OmdbApiCli\ByIdOrTitle;
 
 use Zerotoprod\DataModel\DataModel;
 
@@ -8,8 +8,6 @@ class ByIdOrTitleOptions
 {
     use DataModel;
 
-    public const apikey = 'apikey';
-    public $apikey;
     public const title = 'title';
     public $title = null;
     public const imdbid = 'imdbid';
