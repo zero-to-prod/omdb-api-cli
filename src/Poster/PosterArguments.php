@@ -1,10 +1,10 @@
 <?php
 
-namespace Zerotoprod\OmdbApiCli\DataModels;
+namespace Zerotoprod\OmdbApiCli\Poster;
 
 use Zerotoprod\DataModel\DataModel;
 
-class PosterOptions
+class PosterArguments
 {
     use DataModel;
 
