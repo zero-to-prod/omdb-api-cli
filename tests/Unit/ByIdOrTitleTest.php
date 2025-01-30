@@ -6,6 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
+use Zerotoprod\OmdbApiCli\ByIdOrTitle\ByIdOrTitleArguments;
 use Zerotoprod\OmdbApiCli\ByIdOrTitle\ByIdOrTitleCommand;
 use Zerotoprod\OmdbApiCli\ByIdOrTitle\ByIdOrTitleOptions;
 
@@ -16,10 +17,10 @@ class ByIdOrTitleTest extends TestCase
         $Application = new Application();
         $Application->add(new ByIdOrTitleCommand());
 
-        $Command = $Application->find('omdb-api-cli:byIdOrTitle');
+        $Command = $Application->find(ByIdOrTitleCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([
-            ByIdOrTitleOptions::apikey => '',
+            ByIdOrTitleArguments::apikey => '',
             '--'.ByIdOrTitleOptions::title => '',
         ]);
 
