@@ -44,8 +44,6 @@ jobs:
           tags: |
             davidsmith3/omdb-api-cli:latest
             davidsmith3/omdb-api-cli:${{ env.VERSION }}
-          cache-from: type=registry,ref=davidsmith3/omdb-api-cli:buildcache
-          cache-to: type=registry,ref=davidsmith3/omdb-api-cli:buildcache,mode=max
           build-args: |
             NODE_ENV=production
           labels: |
