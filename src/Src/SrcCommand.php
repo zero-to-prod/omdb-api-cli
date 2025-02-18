@@ -7,6 +7,9 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @link https://github.com/zero-to-prod/omdb-api-cli
+ */
 #[AsCommand(
     name: 'omdb-api-cli:src',
     description: 'Project source link'

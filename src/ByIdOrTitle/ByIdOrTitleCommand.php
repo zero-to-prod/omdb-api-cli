@@ -11,6 +11,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\OmdbApi\OmdbApi;
 use Zerotoprod\OmdbApiCli\Search\SearchOptions;
 
+/**
+ * @link https://github.com/zero-to-prod/omdb-api-cli
+ */
 #[AsCommand(
     name: ByIdOrTitleCommand::signature,
     description: 'Get title by ID or name'
@@ -18,6 +21,9 @@ use Zerotoprod\OmdbApiCli\Search\SearchOptions;
 class ByIdOrTitleCommand extends Command
 {
 
+    /**
+     * @link https://github.com/zero-to-prod/omdb-api-cli
+     */
     public const signature = 'omdb-api-cli:byIdOrTitle';
 
     protected function execute(InputInterface $input, OutputInterface $output): int

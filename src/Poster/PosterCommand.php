@@ -9,12 +9,18 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\OmdbApi\OmdbApi;
 
+/**
+ * @link https://github.com/zero-to-prod/omdb-api-cli
+ */
 #[AsCommand(
     name: PosterCommand::signature,
     description: 'Get the poster of a movie or series'
 )]
 class PosterCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/omdb-api-cli
+     */
     public const signature = 'omdb-api-cli:poster';
 
     protected function execute(InputInterface $input, OutputInterface $output): int

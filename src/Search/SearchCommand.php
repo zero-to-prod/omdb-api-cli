@@ -10,12 +10,18 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\OmdbApi\OmdbApi;
 
+/**
+ * @link https://github.com/zero-to-prod/omdb-api-cli
+ */
 #[AsCommand(
     name: SearchCommand::signature,
     description: 'Search for a movie, series or episode'
 )]
 class SearchCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/omdb-api-cli
+     */
     public const signature = 'omdb-api-cli:search';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
