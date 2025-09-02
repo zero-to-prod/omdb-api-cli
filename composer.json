@@ -45,7 +45,8 @@
     }
   },
   "bin": [
-    "bin/omdb-api-cli"
+    "bin/omdb-api-cli",
+    "bin/zero-to-prod-omdb-api-cli"
   ],
   "require-dev": {
     "phpunit/phpunit": "<12.0"
